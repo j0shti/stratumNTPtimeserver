@@ -493,7 +493,7 @@ def secure():
 
 
 def strip():
-    print("Remove unnecessary stuff.")
+    "Remove unnecessary stuff."
     if os.geteuid() != 0:
         print("The --strip function must run as root.")
         raise SystemExit(0)
