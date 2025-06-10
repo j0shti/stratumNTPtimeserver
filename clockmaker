@@ -234,7 +234,7 @@ def config():
 
     if sbc.name == "Raspberry Pi":
         os.system("systemctl disable hciuart")
-        bc = "/boot/config.txt"
+        bc = "/boot/firmware/config.txt"
         with open(bc, "r") as rp:
             config = rp.read()
             need_uart = "enable_uart=1" not in config
