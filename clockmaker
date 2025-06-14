@@ -37,7 +37,7 @@ except NameError:
 
 class RaspberryPi:
     "Raspberry Pi capabilities"
-    bc = "/boot/config.txt"
+    bc = "/boot/firmware/config.txt"
     dtoverlay = "dtoverlay=pps-gpio,gpiopin="
     gpio_re = re.compile(dtoverlay + "([0-9]*)")
 
@@ -79,7 +79,8 @@ class RaspberryPi:
             "b03112": "Pi 4 Model B Revision 1.2 2GB",
             "c03111": "Pi 4 Model B 4GB",
             "c03112": "Pi 4 Model B Revision 1.2 4GB",
-            "d03115": "Raspberry Pi 4 Model B Rev 1.5"
+            "d03115": "Raspberry Pi 4 Model B Rev 1.5",
+            "c03115": "Raspberry Pi 4 Model B Rev 1.5"
         }
 
     @staticmethod
@@ -263,7 +264,7 @@ def config():
                 reboot_required = True
             else:
                 print("GPU memory already set to zero")
-        kc = "/boot/cmdline.txt"
+        kc = "/boot/firmware/cmdline.txt"
         with open(kc, "r") as rp:
             config = rp.read().split("\n")[0]
             need_nohz = "nohz=off" not in config
