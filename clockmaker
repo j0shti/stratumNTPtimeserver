@@ -170,8 +170,7 @@ def pinprompt(pin_pairs):
         newpin = None
         for k in pin_pairs:
             print("%s = %s" % (k[0], k))
-        # stay young beautiful and unique!
-        sel = my_input("Select a GPS daughterboard type: ").upper()
+        sel = 'A'
         for k in pin_pairs:
             if k.startswith(sel):
                 newpin = pin_pairs[k]
